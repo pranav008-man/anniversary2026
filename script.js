@@ -122,8 +122,10 @@ function showNextQuestion(questionNumber) {
 
 // Function to move the "No" button when clicked
 function moveButton(button) {
-    const x = Math.random() * (window.innerWidth - button.offsetWidth);
-    const y = Math.random() * (window.innerHeight - button.offsetHeight);
+    const x = Math.random() * (window.innerWidth - button.offsetWidth - 40);
+    const y = Math.random() * (window.innerHeight - button.offsetHeight - 40);
+
+    button.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
     button.style.position = 'fixed';
     button.style.left = x + 'px';
     button.style.top = y + 'px';
