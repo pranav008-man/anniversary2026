@@ -252,16 +252,30 @@ window.addEventListener('load', setInitialPosition);
 
 // Celebration function
 function celebrate() {
-    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
+    document.querySelectorAll('.question-section')
+        .forEach(q => q.classList.add('hidden'));
+
     const celebration = document.getElementById('celebration');
     celebration.classList.remove('hidden');
-    
-    // Set celebration messages
-    document.getElementById('celebrationTitle').textContent = config.celebration.title;
-    document.getElementById('celebrationMessage').textContent = config.celebration.message;
-    document.getElementById('celebrationEmojis').textContent = config.celebration.emojis;
-    
-    // Create heart explosion effect
+
+    // Switch background to cinematic slideshow
+    bgCollage.classList.add("slideshow");
+    bgCollage.innerHTML = "";
+
+    finalSlideshowPhotos.forEach(src => {
+        const slide = document.createElement("div");
+        slide.style.backgroundImage = `url('${src}')`;
+        bgCollage.appendChild(slide);
+    });
+
+    // Celebration text
+    document.getElementById('celebrationTitle').textContent =
+        config.celebration.title;
+    document.getElementById('celebrationMessage').textContent =
+        config.celebration.message;
+    document.getElementById('celebrationEmojis').textContent =
+        config.celebration.emojis;
+
     createHeartExplosion();
 }
 
