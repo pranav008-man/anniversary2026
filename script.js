@@ -98,6 +98,8 @@ function showCollageForQuestion(q) {
 // Initialize the page content when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
     bgCollage = document.getElementById("bg-collage");
+    // Set initial background collage for first question
+    showCollageForQuestion(1);
     
     // Validate configuration first
     validateConfig();
@@ -292,6 +294,5 @@ function setupMusicPlayer() {
     });
 } 
 
-// Set initial background collage for first question
-showCollageForQuestion(1);
+
 
