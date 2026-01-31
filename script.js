@@ -262,11 +262,15 @@ function celebrate() {
     bgCollage.classList.add("slideshow");
     bgCollage.innerHTML = "";
 
-    finalSlideshowPhotos.forEach(src => {
+    const loopPhotos = [...finalSlideshowPhotos, ...finalSlideshowPhotos];
+
+    loopPhotos.forEach(src => {
         const slide = document.createElement("div");
         slide.style.backgroundImage = `url('${src}')`;
         bgCollage.appendChild(slide);
-    });
+        
+});
+
 
     // Celebration text
     document.getElementById('celebrationTitle').textContent =
