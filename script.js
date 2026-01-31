@@ -262,14 +262,19 @@ function celebrate() {
     bgCollage.classList.add("slideshow");
     bgCollage.innerHTML = "";
 
+// Duplicate photos for seamless looping
     const loopPhotos = [...finalSlideshowPhotos, ...finalSlideshowPhotos];
 
+// Tell CSS how many slides exist
+    bgCollage.style.setProperty("--slide-count", loopPhotos.length);
+
+// Add slides
     loopPhotos.forEach(src => {
-        const slide = document.createElement("div");
-        slide.style.backgroundImage = `url('${src}')`;
-        bgCollage.appendChild(slide);
+    const slide = document.createElement("div");
+    slide.style.backgroundImage = `url('${src}')`;
+    bgCollage.appendChild(slide);
         
-});
+    });
 
 
     // Celebration text
