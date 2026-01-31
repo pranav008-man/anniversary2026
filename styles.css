@@ -74,7 +74,7 @@ body {
 
 .cute-btn:hover {
     background: var(--button-hover);
-    animation: wiggle 0.4s ease-in-out;
+    animation: wiggle 0.4s ease-in-out infinite;
 }
 
 .hidden {
