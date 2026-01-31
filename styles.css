@@ -37,6 +37,12 @@ body {
     pointer-events: none;
 }
 
+#bg-collage,
+#bg-collage * {
+    pointer-events: none;
+}
+
+
 #bg-collage > div {
     width: 100%;
     height: 100%;
