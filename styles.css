@@ -53,27 +53,27 @@ body {
 #bg-collage.slideshow {
     display: flex;
     flex-wrap: nowrap;
-    width: max-content;
-    animation: cinematicSlide 60s linear infinite;
+    width: calc(var(--slide-count) * 100vw);
+    animation: cinematicSlide 80s linear infinite;
 }
 
 #bg-collage.slideshow > div {
-    min-width: 100vw;
+    width: 100vw;
     height: 100vh;
+    flex-shrink: 0;
     background-size: cover;
     background-position: center;
 }
 
-/* Smooth infinite right → left */
+/* Move exactly HALF the track (seamless loop) */
 @keyframes cinematicSlide {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50 * 100vw));
     }
 }
-
 
 .container {
     background: rgba(255, 255, 255, 0.9);
