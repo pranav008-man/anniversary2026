@@ -49,6 +49,30 @@ body {
     height: 100%;
 }
 
+/* Final cinematic slideshow */
+#bg-collage.slideshow {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
+    animation: cinematicSlide 40s linear infinite;
+}
+
+#bg-collage.slideshow > div {
+    min-width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Smooth right-to-left motion */
+@keyframes cinematicSlide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
 
 
 .container {
