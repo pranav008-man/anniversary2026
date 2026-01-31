@@ -82,6 +82,30 @@ const photoSets = {
     ],
 };
 
+const finalSlideshowPhotos = [
+    "images/q1-1.jpeg",
+    "images/q1-2.jpeg",
+    "images/q1-3.jpeg",
+    "images/q1-4.jpeg",
+    "images/q1-5.jpeg",
+    "images/q1-6.jpeg",
+
+    "images/q2-1.jpeg",
+    "images/q2-2.jpeg",
+    "images/q2-3.jpeg",
+    "images/q2-4.jpeg",
+    "images/q2-5.jpeg",
+    "images/q2-6.jpeg",
+
+    "images/q3-1.jpeg",
+    "images/q3-2.jpeg",
+    "images/q3-3.jpeg",
+    "images/q3-4.jpeg",
+    "images/q3-5.jpeg",
+    "images/q3-6.jpeg"
+];
+
+
 function showCollageForQuestion(q) {
     bgCollage.innerHTML = "";
 
