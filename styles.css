@@ -53,8 +53,8 @@ body {
 #bg-collage.slideshow {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0;
-    animation: cinematicSlide 15s linear infinite;
+    width: max-content;
+    animation: cinematicSlide 60s linear infinite;
 }
 
 #bg-collage.slideshow > div {
@@ -64,13 +64,13 @@ body {
     background-position: center;
 }
 
-/* Smooth right-to-left motion */
+/* Smooth infinite right → left */
 @keyframes cinematicSlide {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
