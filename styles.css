@@ -54,7 +54,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     gap: 0;
-    animation: cinematicSlide 25s linear infinite;
+    animation: cinematicSlide 15s linear infinite;
 }
 
 #bg-collage.slideshow > div {
