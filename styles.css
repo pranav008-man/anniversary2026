@@ -61,8 +61,10 @@ body {
     width: 100vw;
     height: 100vh;
     flex-shrink: 0;
-    background-size: cover;
+
+    background-size: contain;   /* 👈 zoomed OUT */
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Move exactly HALF the track (seamless loop) */
