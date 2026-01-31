@@ -53,7 +53,7 @@ function getDefaultColor(key) {
 // Set page title
 document.title = config.pageTitle;
 
-const bgCollage = document.getElementById("bg-collage");
+let bgCollage;
 
 const photoSets = {
     1: [
@@ -97,6 +97,8 @@ function showCollageForQuestion(q) {
 
 // Initialize the page content when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
+    bgCollage = document.getElementById("bg-collage");
+    
     // Validate configuration first
     validateConfig();
 
@@ -291,8 +293,5 @@ function setupMusicPlayer() {
 } 
 
 // Set initial background collage for first question
-window.addEventListener("DOMContentLoaded", () => {
-    showCollageForQuestion(1);
-});
-
+showCollageForQuestion(1);
 
