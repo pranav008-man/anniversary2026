@@ -111,7 +111,7 @@ function createFloatingElements() {
 function setRandomPosition(element) {
     element.style.left = Math.random() * 100 + 'vw';
     element.style.animationDelay = Math.random() * 5 + 's';
-    element.style.animationDuration = 10 + Math.random() * 20 + 's';
+    element.style.animationDuration = 15 + Math.random() * 10 + 's';
 }
 
 // Function to show next question
@@ -192,7 +192,7 @@ function celebrate() {
 
 // Create heart explosion animation
 function createHeartExplosion() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) {
         const heart = document.createElement('div');
         const randomHeart = config.floatingEmojis.hearts[Math.floor(Math.random() * config.floatingEmojis.hearts.length)];
         heart.innerHTML = randomHeart;
