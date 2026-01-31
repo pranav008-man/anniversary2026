@@ -53,6 +53,48 @@ function getDefaultColor(key) {
 // Set page title
 document.title = config.pageTitle;
 
+const bgCollage = document.getElementById("bg-collage");
+
+const photoSets = {
+    1: [
+        "images/q1-1.jpeg",
+        "images/q1-2.jpeg",
+        "images/q1-3.jpeg",
+        "images/q1-4.jpeg",
+        "images/q1-5.jpeg",
+        "images/q1-6.jpeg",
+    ],
+    2: [
+        "images/q2-1.jpeg",
+        "images/q2-2.jpeg",
+        "images/q2-3.jpeg",
+        "images/q2-4.jpeg",
+        "images/q2-5.jpeg",
+        "images/q2-6.jpeg",
+    ],
+    3: [
+        "images/q3-1.jpeg",
+        "images/q3-2.jpeg",
+        "images/q3-3.jpeg",
+        "images/q3-4.jpeg",
+        "images/q3-5.jpeg",
+        "images/q3-6.jpeg",
+    ],
+};
+
+function showCollageForQuestion(q) {
+    bgCollage.innerHTML = "";
+
+    photoSets[q].forEach(src => {
+        const tile = document.createElement("div");
+        tile.style.backgroundImage = `url('${src}')`;
+        tile.style.backgroundSize = "cover";
+        tile.style.backgroundPosition = "center";
+        bgCollage.appendChild(tile);
+    });
+}
+
+
 // Initialize the page content when DOM is loaded
 window.addEventListener('DOMContentLoaded', () => {
     // Validate configuration first
@@ -116,8 +158,13 @@ function setRandomPosition(element) {
 
 // Function to show next question
 function showNextQuestion(questionNumber) {
-    document.querySelectorAll('.question-section').forEach(q => q.classList.add('hidden'));
-    document.getElementById(`question${questionNumber}`).classList.remove('hidden');
+    document.querySelectorAll('.question-section')
+        .forEach(q => q.classList.add('hidden'));
+
+    document.getElementById(`question${questionNumber}`)
+        .classList.remove('hidden');
+
+    showCollageForQuestion(questionNumber);
 }
 
 // Function to move the "No" button when clicked
@@ -242,3 +289,10 @@ function setupMusicPlayer() {
         }
     });
 } 
+
+// Set initial background collage for first question
+window.addEventListener("DOMContentLoaded", () => {
+    showCollageForQuestion(1);
+});
+
+
